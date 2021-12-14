@@ -5,10 +5,10 @@ import Joi from "joi-browser";
 class AddTreatments extends React.Component {
   state = {
     treatment: {
-        reports: "",
-        medicines: "",
-        description: "",
-      },
+      reports: "",
+      medicines: "",
+      description: "",
+    },
     errors: {},
     errMsg: "",
   };
@@ -64,7 +64,9 @@ class AddTreatments extends React.Component {
       .then((res) => {
         console.log(res.data);
         alert(
-          "Added treatment with Id : " + this.state.treatment.id + " successfully!"
+          "Added treatment with Id : " +
+            this.state.treatment.id +
+            " successfully!"
         );
         this.props.history.push("/treatments");
       })
@@ -77,7 +79,7 @@ class AddTreatments extends React.Component {
 
   render() {
     // Object Destructuring
-    const { reports, medicines, description} = this.state.treatment;
+    const { reports, medicines, description } = this.state.treatment;
     const { errors, errMsg } = this.state;
     return (
       <div className="w-50 mx-auto ">
@@ -91,56 +93,54 @@ class AddTreatments extends React.Component {
           onSubmit={this.handleSubmit}
           className="shadow p-3 mb-5 bg-body rounded mt-3"
         >
-        <div className="mb-3">
-        <label htmlFor="reports" className="form-label">
-          Reports
-        </label>
-        <input
-          type="text"
-          className="form-control"
-          id="reports"
-          aria-describedby="emailHelp"
-          value={reports}
-          name="reports"
-          onChange={this.handleChange}
-        />
-        {errors && <small>{errors.reports}</small>}
-      </div>
-            
-          
-      <div className="mb-3">
-      <label htmlFor="medicines" className="form-label">
-        Medicines
-      </label>
-      <input
-        type="text"
-        className="form-control"
-        id="medicines"
-        aria-describedby="emailHelp"
-        value={medicines}
-        name="medicines"
-        onChange={this.handleChange}
-      />
-      {errors && <small>{errors.medicines}</small>}
-    </div>
-            
-         
-    <div className="mb-3">
-    <label htmlFor="description" className="form-label">
-    description
-    </label>
-    <input
-      type="text"
-      className="form-control"
-      id="description"
-      aria-describedby="emailHelp"
-      value={description}
-      name="description"
-      onChange={this.handleChange}
-    />
-    {errors && <small>{errors.description}</small>}
-  </div>
-            
+          <div className="mb-3">
+            <label htmlFor="reports" className="form-label">
+              Reports
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="reports"
+              aria-describedby="emailHelp"
+              value={reports}
+              name="reports"
+              onChange={this.handleChange}
+            />
+            {errors && <small>{errors.reports}</small>}
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="medicines" className="form-label">
+              Medicines
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="medicines"
+              aria-describedby="emailHelp"
+              value={medicines}
+              name="medicines"
+              onChange={this.handleChange}
+            />
+            {errors && <small>{errors.medicines}</small>}
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="description" className="form-label">
+              description
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="description"
+              aria-describedby="emailHelp"
+              value={description}
+              name="description"
+              onChange={this.handleChange}
+            />
+            {errors && <small>{errors.description}</small>}
+          </div>
+
           <div className="d-grid gap-2 mt-3">
             <button type="submit" className="btn btn-primary">
               Submit

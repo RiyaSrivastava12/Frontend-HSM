@@ -23,6 +23,7 @@ class Login extends React.Component {
           marginLeft: "auto",
           marginRight: "auto",
           marginTop: "20px",
+          backgroundColor: "lightcyan"
         }}
       >
         <Typography variant="h5">Login Form</Typography>

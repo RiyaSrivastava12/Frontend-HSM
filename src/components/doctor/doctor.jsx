@@ -18,15 +18,8 @@ class Doctor extends React.Component {
       })
       .catch((err) => console.log(err));
   }
-  componentDidUpdate() {
-    console.log("componentDidUpdate");
-  }
-  componentWillUnmount() {
-    console.log("componentWillUnmount");
-  }
-
+  
   handleDelete = (id) => {
-    //axios.delete("http://localhost:8082/students/" + rollNo);
     axios
       .delete(`http://localhost:8080/doctors/${id}`)
       .then((res) => {
@@ -34,7 +27,7 @@ class Doctor extends React.Component {
         // Update front end parallely
         const doctors = this.state.doctors.filter((d) => d.id != id);
         this.setState({ doctors: doctors });
-        alert(res.data.dname + " deleted succussfully!");
+        alert("Doctor deleted succussfully!");
       })
       .catch((err) => console.log(err));
   };
@@ -46,14 +39,14 @@ class Doctor extends React.Component {
       Add
     </Link>
 
-        <table className="table w-75 mx-auto shadow-sm p-3 mb-5 bg-body rounded ">
+        <table className="table table-success table-striped table-bordered border-dark  ">
           <thead>
-            <tr className="shadow-sm p-3 mb-5 bg-body rounded">
+            <tr className="table table-dark shadow-sm p-3 mb-5 rounded">
               <th>Doctor_Id</th>
               <th>Doctor Name</th>
-              <th>specialization</th>
-              <th>qualification</th>
-              <th>availability</th>
+              <th>Specialization</th>
+              <th>Qualification</th>
+              <th>Availability</th>
               <th>Actions</th>
             </tr>
           </thead>

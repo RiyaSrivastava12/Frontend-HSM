@@ -23,17 +23,11 @@ class UpdateDoctor extends React.Component {
       .catch((err) => console.log(err));
   }
   handleChange = (event) => {
-    //logic to update state object
-    // console.log(student);
-    // console.log(event.target.name); // name of field - fullName
-    // console.log(event.target.value); // value entered in the field -a
-    // student[fullName] = a;
-    // student.fullName = a;
 
-    // copy state student object to local variable student
+    // copy state doctor object to local variable doctor
     const doctor = { ...this.state.doctor };
 
-    // update local student object with values entered by user
+    // update local doctor object with values entered by user
     doctor[event.target.name] = event.target.value;
 
     // update state object using setState method
@@ -51,7 +45,7 @@ class UpdateDoctor extends React.Component {
       .then((res) => {
         console.log(res.data);
         alert(
-          "Updated doctor " + this.state.doctor.dname + " successfully!"
+          "Updated " + this.state.doctor.dname + " details successfully!"
         );
         this.props.history.push("/doctors");
       })

@@ -13,7 +13,7 @@ const Nav = () => {
         <AppBar position="static">
           <Toolbar>
             <Button to="/home" color="inherit" component={NavLink}>
-              MyApp
+             <h3>HSM</h3> 
             </Button>
 
             <Button

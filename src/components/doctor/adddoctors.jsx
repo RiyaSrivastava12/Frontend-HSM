@@ -38,17 +38,11 @@ class AddDoctors extends React.Component {
     return Object.keys(errors).length === 0 ? null : errors;
   };
   handleChange = (event) => {
-    //logic to update state object
-    // console.log(student);
-    // console.log(event.target.name); // name of field - fullName
-    // console.log(event.target.value); // value entered in the field -a
-    // student[fullName] = a;
-    // student.fullName = a;
 
-    // copy state student object to local variable student
+    // copy state doctor object to local variable doctor
     const doctor = { ...this.state.doctor };
 
-    // update local student object with values entered by user
+    // update local doctor object with values entered by user
     doctor[event.target.name] = event.target.value;
 
     // update state object using setState method
@@ -67,7 +61,7 @@ class AddDoctors extends React.Component {
       .then((res) => {
         console.log(res.data);
         alert(
-          "Added student " + this.state.doctor.dname + " successfully!"
+          "Added doctor " + this.state.doctor.dname + " successfully!"
         );
         this.props.history.push("/doctors");
       })
